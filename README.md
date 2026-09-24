@@ -1,4 +1,4 @@
-<h1 align="center">git-code-review</h1>
+<h1 align="center">Git Code Review</h1>
 
 <p align="center">Review a branch as a single staged diff in your editor, instead of the web UI.</p>
 
