@@ -1,0 +1,16 @@
+# ==============================================================================
+# git-code-review
+# https://github.com/rockberpro/git-code-review
+#
+# Review a branch as a single staged diff in your editor's Source Control panel.
+#
+# Install:
+#   curl -sL https://raw.githubusercontent.com/rockberpro/git-code-review/main/setup.sh | bash
+#
+# Manual install:
+#   git config --global include.path ~/.git-code-review.gitconfig
+# ==============================================================================
+
+[alias]
+    start-review = "!bash ~/.git-code-review-start.sh"
+    end-review   = "!bash ~/.git-code-review-end.sh"
