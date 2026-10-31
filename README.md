@@ -15,7 +15,7 @@ Works with any editor that shows staged changes (VS Code's **Source Control** pa
 **Linux / macOS / Git Bash:**
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/rockberpro/git-code-review/main/setup.sh | bash
+curl -fsSL https://raw.githubusercontent.com/rockberpro-dev/git-code-review/main/setup.sh | bash
 ```
 
 **From a local clone:**
@@ -29,7 +29,7 @@ The setup copies two scripts to `~/` and adds an `[include]` entry to `~/.gitcon
 **Manual install:**
 
 ```bash
-BASE=https://raw.githubusercontent.com/rockberpro/git-code-review/main
+BASE=https://raw.githubusercontent.com/rockberpro-dev/git-code-review/main
 curl -fsSL $BASE/git-code-review.gitconfig -o ~/.git-code-review.gitconfig
 curl -fsSL $BASE/git-start-review.sh -o ~/.git-code-review-start.sh
 curl -fsSL $BASE/git-end-review.sh   -o ~/.git-code-review-end.sh
