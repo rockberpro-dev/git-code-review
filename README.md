@@ -1,14 +1,10 @@
+<p align="center">
+  <img src="resources/img/magnifying-class.png" alt="Git Code Review" width="120">
+</p>
+
 <h1 align="center">Git Code Review</h1>
 
 <p align="center">Review a branch as a single staged diff in your editor, instead of the web UI.</p>
-
-```bash
-git start-review feature/new-index   # the whole MR shows up as one staged diff
-# ... browse, jump to definitions, run the tests, fix things ...
-git end-review                       # back where you were, fixes kept as uncommitted changes
-```
-
-Works with any editor that shows staged changes (VS Code's **Source Control** panel, JetBrains, `git diff --cached`).
 
 ## Install
 
@@ -24,18 +20,17 @@ curl -fsSL https://raw.githubusercontent.com/rockberpro-dev/git-code-review/main
 ./setup-local.sh
 ```
 
-The setup copies two scripts to `~/` and adds an `[include]` entry to `~/.gitconfig` with the `start-review` and `end-review` aliases. Your existing config stays untouched. You can read the full source ([setup.sh](setup.sh), [setup-local.sh](setup-local.sh)) before running it, or use the manual install below.
+The setup copies two scripts to `~/` and adds an `[include]` entry to `~/.gitconfig` with the `start-review` and `end-review` aliases. Your existing config stays untouched. You can read the full source ([setup.sh](setup.sh), [setup-local.sh](setup-local.sh)) before running it, or follow the [manual install](GUIDE.md#manual-install).
 
-**Manual install:**
+## Usage
 
 ```bash
-BASE=https://raw.githubusercontent.com/rockberpro-dev/git-code-review/main
-curl -fsSL $BASE/git-code-review.gitconfig -o ~/.git-code-review.gitconfig
-curl -fsSL $BASE/git-start-review.sh -o ~/.git-code-review-start.sh
-curl -fsSL $BASE/git-end-review.sh   -o ~/.git-code-review-end.sh
-chmod +x ~/.git-code-review-start.sh ~/.git-code-review-end.sh
-git config --global --add include.path ~/.git-code-review.gitconfig
+git start-review feature/new-index   # the whole MR shows up as one staged diff
+# ... browse, jump to definitions, run the tests, fix things ...
+git end-review                       # back where you were, fixes kept as uncommitted changes
 ```
+
+Works with any editor that shows staged changes (VS Code's **Source Control** panel, JetBrains, `git diff --cached`).
 
 ## Before you start
 
@@ -83,13 +78,6 @@ Going back to `X` shows only the branch's changes. Going back to the tip of `mai
 - New files created during the review stay in the working tree as untracked; check with `git status`.
 - Since the scripts live in `~/`, they keep working even when the branch under review is older than any project-level tooling.
 
-## Uninstall
-
-```bash
-git config --global --unset include.path ~/.git-code-review.gitconfig
-rm ~/.git-code-review.gitconfig ~/.git-code-review-start.sh ~/.git-code-review-end.sh
-```
-
 ---
 
-[setup.sh](setup.sh) · [setup-local.sh](setup-local.sh) · [git-code-review.gitconfig](git-code-review.gitconfig) · [git-start-review.sh](git-start-review.sh) · [git-end-review.sh](git-end-review.sh)
+[GUIDE.md](GUIDE.md) · [setup.sh](setup.sh) · [setup-local.sh](setup-local.sh) · [git-code-review.gitconfig](git-code-review.gitconfig) · [git-start-review.sh](git-start-review.sh) · [git-end-review.sh](git-end-review.sh)
